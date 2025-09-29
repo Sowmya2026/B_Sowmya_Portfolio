@@ -7,13 +7,15 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 const projectsData = [
   {
     id: 1,
-    title: "MealPicker – Mobile App for Meal Selection",
+    title: "MenuPick – Monthly Meal Selection Platform",
     description:
-      "Built a mobile app for personalized meal selection, day-wise menu display, and real-time menu updates in the hostel mess with dual login for students and administrators.",
-    technologies: ["Android App", "Firebase"],
-    githubUrl: "极细的s://github.com/Sowmya2026/MealPicker",
-    demoUrl: "#",
+      "Built a web-based application for monthly meal selection and management. Features include student meal selection, admin menu management, nutrition info display, meal locking, and notifications, all designed to optimize hostel/PG mess operations.",
+    technologies: ["React", "Vite", "JavaScript", "TailwindCSS", "Firebase"],
+    githubUrl: "https://github.com/Sowmya2026/MenuPick",
+    demoUrl: "https://meal-student-app.vercel.app/",
+    adminUrl:"https://meal-admin-panel.vercel.app/",
   },
+
   {
     id: 2,
     title: "DormTrack – Hostel Attendance & Services App",
@@ -28,9 +30,9 @@ const projectsData = [
     title: "MandirAtlas – Web Platform for Temple Exploration",
     description:
       "Designed a web platform for exploring Hindu temples across India, providing historical insights and festival details with state-wise organization.",
-    technologies: ["App"],
+    technologies: ["html","CSS","JavaScript"],
     githubUrl: "https://github.com/Sowmya2026/MandirAtlas",
-    demoUrl: "#",
+    demoUrl: "https://sowmya2026.github.io/MandirAtlass/",
   },
 ];
 
@@ -89,12 +91,9 @@ const Projects = () => {
     <section
       id="projects"
       className="min-h-screen flex flex-col md:flex-row transition-colors duration-300 relative overflow-hidden"
-     
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden z-0">
-  
-
         {/* Floating squares */}
         {[...Array(10)].map((_, i) => (
           <motion.div
@@ -198,7 +197,7 @@ const Projects = () => {
       </motion.div>
 
       {/* Projects Content - 80% width */}
-      <div className="w-full md:w-4/5 py-12 md:py-16 px-4 md:px-8 relative z-10 dark:bg-[#0d1220]">
+      <div className="w-full md:w-4/5 py-12 md:py-16 px-4 md:px-8 relative z-10 bg-white dark:bg-[#0d1220]">
         {/* Header with description and filter */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -521,6 +520,17 @@ const Projects = () => {
 
                     <motion.a
                       href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 transition-colors hover:underline font-medium text-xs md:text-sm"
+                      style={{ color: COLORS.primary }}
+                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <FaExternalLinkAlt size={11} /> Live Demo
+                    </motion.a>
+                    <motion.a
+                      href={project.adminUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-1.5 transition-colors hover:underline font-medium text-xs md:text-sm"
